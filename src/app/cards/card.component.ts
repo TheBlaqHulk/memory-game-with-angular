@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { CardModel } from "./card.model";
-import { CardsService } from "../cards.service";
+import { Component, OnInit } from '@angular/core';
+import { CardModel } from './card.model';
+import { CardsService } from '../cards.service';
 
 @Component({
-  selector: "app-card",
-  templateUrl: "./card.component.html",
-  styleUrls: ["./card.component.css"],
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
   frontCard: CardModel[] = [];
 
-  back = "back.svg";
+  back = 'back.svg';
 
   lock = false;
   flipped = false;
@@ -48,9 +48,9 @@ export class CardComponent implements OnInit {
 
   clickCheck(card: CardModel) {
     card.flipped = !card.flipped;
-    if (!this.first.hasOwnProperty("car")) {
+    if (!this.first.hasOwnProperty('car')) {
       this.first = card;
-    } else if (!this.second.hasOwnProperty("car")) {
+    } else if (!this.second.hasOwnProperty('car')) {
       this.second = card;
     }
   }
