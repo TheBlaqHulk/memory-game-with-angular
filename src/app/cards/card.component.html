@@ -1,0 +1,14 @@
+<div class="grid">
+    <div class="alert alert-success col-9" *ngIf="cardsMatched === 15">
+        <strong>MEMORY CHAMP!!! You've matched all the cards.</strong>
+        <button class="btn btn-success" (click)="resetGrid()">Have Another Go</button>
+    </div>
+
+<section class="gameboard">
+    <div class="gamecard" *ngFor="let card of frontCard" (click)="flipCard(card)"
+        [ngClass]="card.flipped ? 'flip' : ''">
+    <img src="../../assets/images/{{}}" alt="" class="front">
+    <img src="../../assets/images/back.svg" alt="" class="back">
+</div>
+</section>
+</div>

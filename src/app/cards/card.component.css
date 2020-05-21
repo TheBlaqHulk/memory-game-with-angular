@@ -1,0 +1,47 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: palevioletred;
+}
+
+.gameboard {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 100px;
+    border: 1px yellowgreen;
+}
+
+.gamecard {
+    width: 16.66%;
+    height: 20%;
+    position: relative;
+    border: 1px solid whitesmoke;
+    transform-style: preserve-3d;
+    transition: transform.4s;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1px solid goldenrod;
+    border-radius: 3px;
+    background: indigo;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.gamecard.flip {
+    transform: rotateY(180deg);
+}
