@@ -26,8 +26,7 @@ export class CardComponent implements OnInit {
     );
     this.frontCard.splice(15);
     this.frontCard = this.cardService.shuffleCards(
-      this.cardService.addIndex(this.cardService(this.frontCard))
-    );
+      this.cardService.addIndex(this.cardService.duplicateCards(this.frontCard)));
     for (const [k, card] of Object.entries(this.frontCard)) {
       console.log(parseInt(k, 2) + 1, card.car);
     }
