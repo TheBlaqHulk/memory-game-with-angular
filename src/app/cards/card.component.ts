@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardModel } from './card.model';
-import { CardsService } from '../cards.service';
+import { CardsService } from '../card.service';
 
 @Component({
   selector: 'app-card',
@@ -18,12 +18,14 @@ export class CardComponent implements OnInit {
   second: any = {};
   matchedPairs = 0;
 
-  constructor(private cardService: CardsService) {}
+  constructor(private cardService: CardsService) { }
 
   ngOnInit() {
-    this.frontCard = this.cardService.shuffle(this.cardService.getFrontCard());
+    this.frontCard = this.cardService.shuffleCards(
+      this.cardService.getFrontCard()
+    );
     this.frontCard.splice(15);
-    this.frontCard = this.cardService.shuffle(
+    this.frontCard = this.cardService.shuffleCards(
       this.cardService.addIndex(this.cardService(this.frontCard))
     );
     for (const [k, card] of Object.entries(this.frontCard)) {
