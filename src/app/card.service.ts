@@ -48,7 +48,7 @@ export class CardsService {
     }
     return array;
   }
-  addIndex(array: CardModel) {
+  addIndex(array: CardModel[]) {
     array.forEach((item, index) => {
       item.id = index;
     });
