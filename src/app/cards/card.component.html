@@ -4,11 +4,11 @@
         <button class="btn btn-success" (click)="resetGrid()">Have Another Go</button>
     </div>
 
-<section class="gameboard">
-    <div class="gamecard" *ngFor="let card of frontCard" (click)="flipCard(card)"
-        [ngClass]="card.flipped ? 'flip' : ''">
-    <img src="../../assets/images/{{}}" alt="" class="front">
-    <img src="../../assets/images/back.svg" alt="" class="back">
-</div>
-</section>
+    <section class="gameboard">
+        <div class="gamecard" *ngFor="let card of frontCard" (click)="flipCard(card)"
+            [ngClass]="card.flipped ? 'flip' : ''">
+            <img src="../../assets/images/{{card.car}}" alt="" class="front">
+            <img src="../../assets/images/{back.svg}" alt="" class="back">
+        </div>
+    </section>
 </div>
