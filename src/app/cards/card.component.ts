@@ -5,8 +5,9 @@ import { CardsService } from '../card.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  styleUrls: ['./card.component.css']
 })
+
 export class CardComponent implements OnInit {
   frontCard: CardModel[] = [];
 
@@ -27,9 +28,6 @@ export class CardComponent implements OnInit {
     this.frontCard.splice(15);
     this.frontCard = this.cardService.shuffleCards(
       this.cardService.addIndex(this.cardService.duplicateCards(this.frontCard)));
-    for (const [k, card] of Object.entries(this.frontCard)) {
-      console.log(parseInt(k, 2) + 1, card.car);
-    }
   }
 
   resetFlips() {
