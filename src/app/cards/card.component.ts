@@ -62,12 +62,20 @@ export class CardComponent implements OnInit {
     }
     return true;
   }
+  matchedCards(card: CardModel) {
+    this.cardsMatched++;
+    [this.first.matched, this.second.matched] = [true, true];
+    [this.first, this.second] = [{}, {}];
+  }
 
   flipCard(card: CardModel) {
     if (this.preCheck(card)) {
       return;
     }
     this.clickCheck(card);
+    if (this.matchCheck(card)) {
+      this.matchedCards(card);
+    }
   }
 
   flipDeck() {
