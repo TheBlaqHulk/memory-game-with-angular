@@ -63,7 +63,7 @@ export class CardComponent implements OnInit {
     return true;
   }
   matchedCards(card: CardModel) {
-    this.cardsMatched++;
+    this.matchedPairs++;
     [this.first.matched, this.second.matched] = [true, true];
     [this.first, this.second] = [{}, {}];
   }
