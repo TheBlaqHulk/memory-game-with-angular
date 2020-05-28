@@ -8,7 +8,7 @@
         <div class="gamecard" *ngFor="let card of frontCard" (click)="flipCard(card)"
             [ngClass]="card.flipped ? 'flip' : ''">
             <img src="../../assets/images/{{card.car}}" alt="" class="front">
-            <img src="../../assets/{back}" alt="" class="back">
+            <img src="../../assets/{{ back }}" alt="" class="back">
         </div>
     </section>
 </div>
