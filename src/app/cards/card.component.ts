@@ -17,7 +17,7 @@ export class CardComponent implements OnInit {
   flipped = false;
   first: any = {};
   second: any = {};
-  matchedPairs = 0;
+  cardsMatched = 0;
 
   constructor(private cardService: CardsService) { }
 
@@ -63,7 +63,7 @@ export class CardComponent implements OnInit {
     return true;
   }
   matchedCards(card: CardModel) {
-    this.matchedPairs++;
+    this.cardsMatched++;
     [this.first.matched, this.second.matched] = [true, true];
     [this.first, this.second] = [{}, {}];
   }
